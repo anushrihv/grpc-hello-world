@@ -1,2 +1,2 @@
 proto-gen:
-	prototool generate ../idl-files/idl; exit 0
+	prototool generate ./idl-files/idl; exit 0

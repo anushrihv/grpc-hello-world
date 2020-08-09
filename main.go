@@ -32,6 +32,7 @@ func main(){
 	}
 	grpcServer := grpc.NewServer()
 	idlpb.RegisterHelloWorldServer(grpcServer, &service.HelloWorldServer{})
+	fmt.Println("Listening at port 8085")
 	if err = grpcServer.Serve(listener); err != nil {
 		fmt.Println("Error occurred while serving ", err)
 	}

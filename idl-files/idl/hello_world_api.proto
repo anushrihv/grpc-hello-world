@@ -1,0 +1,28 @@
+
+syntax = "proto3";
+
+package idl;
+
+option go_package = "idlpb";
+option java_multiple_files = true;
+option java_outer_classname = "HelloWorldApiProto";
+option java_package = "com.idl";
+
+// HelloWorld service that can only greet.
+service HelloWorld {
+  rpc SayHello(SayHelloRequest) returns (SayHelloResponse);
+}
+
+// Request that contains the name of the person to greet.
+message SayHelloRequest {
+
+  // Name of the person to say hello to.
+  string name = 1;
+}
+
+// Greeting in response.
+message SayHelloResponse {
+
+  // Response which is a greeting from the hello-world microservice.
+  string greeting = 1;
+}
