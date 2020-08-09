@@ -1,4 +1,4 @@
-FROM golang:1.14
+FROM golang:1.14 AS builder
 
 WORKDIR /app
 
@@ -6,9 +6,11 @@ COPY . .
 
 RUN go build
 
-RUN ls
+FROM golang:1.14
 
-RUN pwd
+WORKDIR /app
+
+COPY --from=builder /app/hello-world .
 
 EXPOSE 8080
 
